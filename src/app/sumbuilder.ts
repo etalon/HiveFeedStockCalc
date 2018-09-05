@@ -1,16 +1,35 @@
+import { PartCount } from "./partcount";
+import { PARTS} from './mock-parts';
+import { debug } from "util";
+
 export class SumBuilder {
     weightLeft: number;
     weightRight: number;
     weightFeedStock: number;
-    // UNDONE: PartCount;
+    partCount: PartCount[];
+    
     // UNDONE: Date;
     // UNDONE: Hive;
 
- calc(){
+    constructor(){
+      weightLeft: 0;
+      weightRight: 0;
 
-  this.weightFeedStock = this.weightLeft + this.weightRight;
+      PARTS.forEach(part => function(part)  {
 
-}
+        console.log("Helloi");
+        console.log(this.partCount);
 
+        //this.partCount.add(new PartCount(part, 0));
+  
+      }, this);
+
+    }
+
+
+  calcFeedStock() {
+
+  this.weightFeedStock = +this.weightLeft + +this.weightRight;
 
   }
+}

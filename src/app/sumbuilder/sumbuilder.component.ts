@@ -8,17 +8,19 @@ import { SumBuilder } from '../sumbuilder';
 })
 export class SumbuilderComponent implements OnInit {
   
-  calc(): void{
+  calcFeedStock(): void{
 
-    this.sumBuilder.weightFeedStock = +this.sumBuilder.weightLeft + +this.sumBuilder.weightRight;
+   this.sumBuilder.calcFeedStock();
   
   }
 
-    sumBuilder: SumBuilder = {
-      weightLeft: 0,
-      weightRight: 0,
-      weightFeedStock: 0
-    };
+  showPartCount(): void {
+
+    alert("to be done");
+
+  }
+
+  sumBuilder = new SumBuilder ;
 
   constructor() { }
 
