@@ -1,7 +1,9 @@
 <h2>SumBuilder</h2>
-<div><span>Weight Left: </span><input [(ngModel)]="sumBuilder.weightLeft" placeholder="weightLeft" (ngModelChange)="calcFeedStock()"> KG</div>
-<div><span>Weight Right: </span><input [(ngModel)]="sumBuilder.weightRight" placeholder="weightRight" (ngModelChange)="calcFeedStock()"> KG</div>
+<div><label>Weight Left: </label><input [(ngModel)]="sumBuilder.weightLeft" placeholder="weightLeft" (ngModelChange)="calcFeedStock()"> KG</div>
+<div><label>Weight Right: </label><input [(ngModel)]="sumBuilder.weightRight" placeholder="weightRight" (ngModelChange)="calcFeedStock()"> KG</div>
 <hr/>
-<button (click)="showPartCount()">Komponenten</button>
+<!-- <button (click)="showPartCount()">Komponenten</button> -->
+<app-partcounts [sumBuilder]="sumBuilder"></app-partcounts>
+
 <hr/>
-<div><span>Weight Feed Stock: {{sumBuilder.weightFeedStock}} KG</span></div>
+<div><span>Weight Feed Stock: {{sumBuilder.weightFeedStock | number:'1.2-2'}} KG</span></div>

@@ -7,7 +7,7 @@ export class PartCount {
     constructor(part, count){
       
       this.part = part;
-      this.count = count;
+      this.count = part.defaultCount;
 
     }
   }

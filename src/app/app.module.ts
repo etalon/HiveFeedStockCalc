@@ -4,11 +4,13 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { SumbuilderComponent } from './sumbuilder/sumbuilder.component';
+import { PartcountsComponent } from './partcounts/partcounts.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SumbuilderComponent
+    SumbuilderComponent,
+    PartcountsComponent
   ],
   imports: [
     BrowserModule,

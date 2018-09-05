@@ -1,0 +1,5 @@
+<div>
+  <div *ngFor="let pc of sumBuilder.partCount">
+    <label>{{pc.part.name}} ({{pc.part.weight}} KG)</label> <input [(ngModel)]="pc.count" placeholder="count" (ngModelChange)="calcFeedStock()">
+  </div>
+</div>

@@ -11,25 +11,28 @@ export class SumBuilder {
     // UNDONE: Date;
     // UNDONE: Hive;
 
-    constructor(){
-      weightLeft: 0;
-      weightRight: 0;
+    constructor() {
+      this.weightLeft = 0;
+      this.weightRight =  0;
+      this.partCount = new Array();
 
-      PARTS.forEach(part => function(part)  {
-
-        console.log("Helloi");
-        console.log(this.partCount);
-
-        //this.partCount.add(new PartCount(part, 0));
-  
-      }, this);
+      PARTS.forEach(function(part)  {
+        this.partCount.push(new PartCount(part, 0));
+      },this);
 
     }
 
-
   calcFeedStock() {
 
-  this.weightFeedStock = +this.weightLeft + +this.weightRight;
+    var emptyWeight = 0;
+
+    this.partCount.forEach(function(pc){
+
+      emptyWeight = +emptyWeight + (+pc.count * +pc.part.weight)
+
+    },this);
+
+    this.weightFeedStock = +this.weightLeft + +this.weightRight - emptyWeight;
 
   }
 }
