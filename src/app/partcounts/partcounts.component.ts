@@ -1,4 +1,4 @@
-import { SumBuilder } from "../sumbuilder";
+import { SumBuilder } from '../sumbuilder';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -13,10 +13,10 @@ export class PartcountsComponent implements OnInit {
 
   constructor() { }
 
-  calcFeedStock(): void{
+  calcFeedStock(): void {
 
     this.sumBuilder.calcFeedStock();
-   
+
    }
 
   ngOnInit() {

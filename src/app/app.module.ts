@@ -5,12 +5,14 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { SumbuilderComponent } from './sumbuilder/sumbuilder.component';
 import { PartcountsComponent } from './partcounts/partcounts.component';
+import { PartComponent } from './part/part.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SumbuilderComponent,
-    PartcountsComponent
+    PartcountsComponent,
+    PartComponent
   ],
   imports: [
     BrowserModule,

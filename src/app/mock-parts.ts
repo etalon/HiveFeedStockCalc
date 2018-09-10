@@ -1,8 +1,8 @@
 import { Part } from "./part";
 
 export const PARTS: Part[] = [
-    {id: 1, name: 'Beutenkorpus', weight: 30, defaultCount: 1},
-    {id: 2, name: 'Deckel', weight: 20, defaultCount: 0},
+    {id: 1, name: 'Beutenkorpus', weight: 19, defaultCount: 1},
+    {id: 2, name: 'Deckel', weight: 8, defaultCount: 0},
     {id: 3, name: 'Trennschied (bienendicht)', weight: 1.48, defaultCount: 1},
     {id: 4, name: 'Trennschied (normal)', weight: 1.03, defaultCount: 0},
     {id: 5, name: 'Futtertasche', weight: 1.37, defaultCount: 1},

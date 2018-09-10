@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SumBuilder } from '../sumbuilder';
+import { PartService } from '../part.service';
+import { Part } from 'src/app/part';
 
 @Component({
   selector: 'app-sumbuilder',
@@ -7,22 +9,32 @@ import { SumBuilder } from '../sumbuilder';
   styleUrls: ['./sumbuilder.component.css']
 })
 export class SumbuilderComponent implements OnInit {
-  
-  calcFeedStock(): void{
+
+  parts: Part[];
+  sumBuilder: SumBuilder;
+
+  calcFeedStock(): void {
 
    this.sumBuilder.calcFeedStock();
-  
+
   }
 
   showPartCount(): void {
 
-    alert("to be done");
+    alert('to be done');
 
   }
 
-  sumBuilder = new SumBuilder ;
+  createSumBuilder(): void {
+    this.partService.getAll()
+      .subscribe(parts => this.sumBuilder = new SumBuilder(parts));
+  }
 
-  constructor() { }
+  constructor(private partService: PartService) {
+
+    this.createSumBuilder();
+
+  }
 
   ngOnInit() {
   }

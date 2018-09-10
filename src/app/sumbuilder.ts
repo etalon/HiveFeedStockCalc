@@ -1,36 +1,36 @@
-import { PartCount } from "./partcount";
-import { PARTS} from './mock-parts';
-import { debug } from "util";
+import { PartCount } from './partcount';
+import { debug } from 'util';
+import { Part } from 'src/app/part';
 
 export class SumBuilder {
     weightLeft: number;
     weightRight: number;
     weightFeedStock: number;
     partCount: PartCount[];
-    
+
     // UNDONE: Date;
     // UNDONE: Hive;
 
-    constructor() {
+    constructor(parts: Part[]) {
       this.weightLeft = 0;
       this.weightRight =  0;
       this.partCount = new Array();
 
-      PARTS.forEach(function(part)  {
+      parts.forEach(function(part)  {
         this.partCount.push(new PartCount(part, 0));
-      },this);
+      }, this);
 
     }
 
   calcFeedStock() {
 
-    var emptyWeight = 0;
+    let emptyWeight = 0;
 
-    this.partCount.forEach(function(pc){
+    this.partCount.forEach(function(pc) {
 
-      emptyWeight = +emptyWeight + (+pc.count * +pc.part.weight)
+      emptyWeight = +emptyWeight + (+pc.count * +pc.part.weight);
 
-    },this);
+    }, this);
 
     this.weightFeedStock = +this.weightLeft + +this.weightRight - emptyWeight;
 
