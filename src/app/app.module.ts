@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { SumbuilderComponent } from './sumbuilder/sumbuilder.component';
 import { PartcountsComponent } from './partcounts/partcounts.component';
 import { PartComponent } from './part/part.component';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SumbuilderComponent,
     PartcountsComponent,
-    PartComponent
+    PartComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
